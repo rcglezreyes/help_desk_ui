@@ -53,7 +53,7 @@ const ListTickets = () => {
 
     /*FETCH DATA FROM TABLE*/
 
-    const LIST_ENDPOINT = 'http://localhost:9000/tickets'
+    const LIST_ENDPOINT = process.env.REACT_APP_LIST_ENDPOINT;
 
     const handleGetAll = GetAllTickets(LIST_ENDPOINT);
 
@@ -113,7 +113,7 @@ const ListTickets = () => {
 function Row(props: { row: ReturnType<typeof createData> }) {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
-    const UPDATE_ENDPOINT = "http://localhost:9000/update_ticket"
+    const UPDATE_ENDPOINT = process.env.REACT_APP_UPDATE_ENDPOINT;
     const navigate = useNavigate()
 
     const navigateToConfirmation = () => {

@@ -12,7 +12,7 @@ const AddTicket = (props) => {
             navigate('/')
         }
 
-        const FORM_ENDPOINT = "http://localhost:9000/add_ticket"
+        const FORM_ENDPOINT = process.env.REACT_APP_ADD_ENDPOINT;
 
         const additionalData = {
             status: 'new',

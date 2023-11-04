@@ -12,12 +12,11 @@ function App() {
       <Router>
           <Routes>
               <Route index element={<HelpDesk />} />
-              <Route path="/add_ticket" element={<AddTicket />} />
-              <Route path="/tickets" element={<ListTickets />} />
-              <Route path="/confirmation" element={<Confirmation />} />
+              <Route path='/add_ticket' element={<AddTicket />} />
+              <Route path='/tickets' element={<ListTickets />} />
+              <Route path='/confirmation' element={<Confirmation />} />
           </Routes>
       </Router>
-    // <HelpDesk/>
   );
 }
 
