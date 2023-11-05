@@ -47,6 +47,7 @@ import axios from "axios";
     }
 
     function UpdateTicket(finalUpdateEndpoint, method, row, {additionalData}) {
+        let res = '';
         if (additionalData) {
             Object.assign(row, additionalData);
         }
@@ -62,14 +63,16 @@ import axios from "axios";
                     if (response.status !== 200) {
                         throw new Error(response.statusText);
                     }
+                    res = response.status;
                     return response.status;
                 })
                 .then(() => {
-                    console.log("Hello")
+                    console.log("Updated")
                 })
                 .catch((err) => {
                     console.log(err.toString());
                 });
+        return res;
     }
 
     function GetAllTickets(finalGetAllEndpoint) {

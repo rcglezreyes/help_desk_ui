@@ -134,8 +134,10 @@ function Row(props: { row: ReturnType<typeof createData> }) {
     const handleUpdate = () => {
         additionalData.isUpdateResponse = true;
         row.response = document.getElementById('newResponse').value;
-        UpdateTicket(UPDATE_ENDPOINT, 'POST', row, {additionalData});
-        navigateToConfirmation()
+        const res = UpdateTicket(UPDATE_ENDPOINT, 'POST', row, {additionalData});
+        if (res === 200) {
+            navigateToConfirmation()
+        }
     }
 
     /*HTML ROW COLLAPSE*/
